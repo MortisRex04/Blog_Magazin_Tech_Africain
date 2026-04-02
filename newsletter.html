@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Newsletter | Tech Africain</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@700&family=Source+Serif+Pro:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style-newsletter.css">
+</head>
+<body class="site-main-container">
+
+    <header class="header-main-nav">
+        <div class="header-logo-container">
+            <a href="index.html" style="text-decoration: none; color: inherit;">
+                <h1 class="header-magazine-title">TECH <span class="accent-color-yellow">AFRICAIN</span></h1>
+            </a>
+        </div>
+        <nav class="header-navigation-menu">
+            <ul class="header-nav-list-items">
+                <li><a href="index.html" class="nav-link-item">ACCUEIL</a></li>
+                <li><a href="article.html" class="nav-link-item">ARTICLE</a></li>
+                <li><a href="category.html" class="nav-link-item">CATEGORIES</a></li>
+                <li><a href="authors.html" class="nav-link-item">AUTEURS</a></li>
+                <li><a href="about.html" class="nav-link-item">À PROPOS</a></li>
+                <li><a href="newsletter.html" class="nav-link-item active accent-button">S'abonner</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="newsletter-page-layout">
+        <section class="newsletter-subscription-box-main">
+            <div class="newsletter-visual-side">
+                <img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&q=80&w=800" alt="Futur" class="newsletter-hero-img">
+                <div class="newsletter-overlay-content">
+                    <h2 class="overlay-title">L'essentiel de la Tech dans votre boîte mail.</h2>
+                    <p class="overlay-subtitle">Rejoignez 50 000+ abonnés passionnés par le futur du continent.</p>
+                </div>
+            </div>
+
+            <div class="newsletter-form-side">
+                <header class="form-header-intro">
+                    <span class="subscription-label-accent">S'ABONNER</span>
+                    <h1 class="form-main-title">NE MANQUEZ <span class="accent-color-yellow">RIEN</span>.</h1>
+                    <p class="form-description-text">Recevez chaque lundi matin une sélection de nos meilleures analyses, des interviews exclusives et les dernières levées de fonds.</p>
+                </header>
+
+                <form class="newsletter-subscribe-form-main" id="subscriptionForm">
+                    <div class="form-input-group-row">
+                        <div class="input-field-wrapper">
+                            <label for="firstName">Prénom</label>
+                            <input type="text" id="firstName" placeholder="Ex: Amina" required class="form-input-control">
+                        </div>
+                        <div class="input-field-wrapper">
+                            <label for="lastName">Nom</label>
+                            <input type="text" id="lastName" placeholder="Ex: Diallo" required class="form-input-control">
+                        </div>
+                    </div>
+
+                    <div class="input-field-wrapper">
+                        <label for="email">Adresse Email</label>
+                        <input type="email" id="email" placeholder="votre@email.com" required class="form-input-control">
+                    </div>
+
+                    <div class="input-field-wrapper">
+                        <label for="interest">Sujet d'intérêt principal</label>
+                        <select id="interest" class="form-input-control select-control">
+                            <option value="innovation">Innovation & Startups</option>
+                            <option value="fintech">Fintech & Économie</option>
+                            <option value="infrastructure">Infrastructures & 5G</option>
+                            <option value="policy">Politique & Régulation</option>
+                        </select>
+                    </div>
+
+                    <div class="form-checkbox-consent-wrapper">
+                        <input type="checkbox" id="consent" required>
+                        <label for="consent">J'accepte de recevoir la newsletter hebdomadaire de Tech Africain et je consens au traitement de mes données personnelles.</label>
+                    </div>
+
+                    <button type="submit" class="newsletter-submit-cta-btn">REJOINDRE LA COMMUNAUTÉ</button>
+                </form>
+
+                <div class="form-footer-note">
+                    <p>Respect de la vie privée. Aucun spam. Désinscription en un clic.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer-main-container">
+        <div class="footer-branding-info">
+            <h2 class="footer-magazine-logo-title">TECH <span class="accent-color-yellow">AFRICAIN</span></h2>
+        </div>
+        <div class="footer-copyright-legal-section">
+            <p>&copy; 2026 Blog Magazine Tech Africain.</p>
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById('subscriptionForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Merci de votre inscription ! Vous allez recevoir un email de confirmation.');
+            this.reset();
+        });
+    </script>
+
+</body>
+</html>

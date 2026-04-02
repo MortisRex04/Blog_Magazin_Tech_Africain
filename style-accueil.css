@@ -1,0 +1,251 @@
+/* Root Variables for Consistency */
+:root {
+    --color-black-editorial: #0F0F0F;
+    --color-white-pure: #FFFFFF;
+    --color-yellow-accent: #F59E0B;
+    --color-gray-text: #6B7280;
+    --font-titles: 'Oswald', sans-serif;
+    --font-body: 'Source Serif Pro', serif;
+}
+
+/* Reset and Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--color-white-pure);
+    color: var(--color-black-editorial);
+    font-family: var(--font-body);
+    line-height: 1.6;
+    padding: 0 5%;
+}
+
+/* Typography Overrides */
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-titles);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.accent-color-yellow {
+    color: var(--color-yellow-accent);
+}
+
+/* Header Navigation */
+.header-main-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2rem 0;
+    border-bottom: 2px solid var(--color-black-editorial);
+    margin-bottom: 3rem;
+}
+
+.header-magazine-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+}
+
+.header-nav-list-items {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+}
+
+.nav-link-item {
+    text-decoration: none;
+    color: var(--color-black-editorial);
+    font-family: var(--font-titles);
+    font-weight: 700;
+    font-size: 1.1rem;
+    transition: color 0.3s ease;
+}
+
+.nav-link-item:hover, .nav-link-item.active {
+    color: var(--color-yellow-accent);
+}
+
+.accent-button {
+    background-color: var(--color-black-editorial);
+    color: var(--color-white-pure);
+    padding: 0.5rem 1.2rem;
+    transition: background-color 0.3s ease;
+}
+
+.accent-button:hover {
+    background-color: var(--color-yellow-accent);
+    color: var(--color-black-editorial);
+}
+
+/* Hero Section */
+.hero-article-section {
+    margin-bottom: 4rem;
+}
+
+.hero-article-card-featured {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+    gap: 2rem;
+    align-items: center;
+}
+
+.hero-article-main-img {
+    width: 100%;
+    height: 500px;
+    object-fit: cover;
+    filter: grayscale(20%);
+    transition: filter 0.3s ease;
+}
+
+.hero-article-main-img:hover {
+    filter: grayscale(0%);
+}
+
+.article-category-label-accent {
+    background-color: var(--color-yellow-accent);
+    padding: 0.2rem 0.8rem;
+    font-family: var(--font-titles);
+    font-weight: 700;
+    font-size: 0.9rem;
+}
+
+.hero-article-title-main {
+    font-size: 3rem;
+    margin: 1rem 0;
+    line-height: 1.1;
+}
+
+.hero-article-excerpt-text {
+    font-size: 1.2rem;
+    color: var(--color-gray-text);
+    margin-bottom: 1.5rem;
+}
+
+.hero-article-read-more-btn {
+    display: inline-block;
+    padding: 0.8rem 2rem;
+    background-color: var(--color-black-editorial);
+    color: var(--color-white-pure);
+    text-decoration: none;
+    font-family: var(--font-titles);
+    font-weight: 700;
+    transition: transform 0.2s ease;
+}
+
+.hero-article-read-more-btn:hover {
+    transform: translateY(-3px);
+    background-color: var(--color-yellow-accent);
+    color: var(--color-black-editorial);
+}
+
+/* Content Grid Layout */
+.articles-grid-sidebar-layout {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 4rem;
+    margin-bottom: 5rem;
+}
+
+.section-title-editorial-line {
+    border-bottom: 4px solid var(--color-black-editorial);
+    margin-bottom: 2rem;
+    padding-bottom: 0.5rem;
+    font-size: 1.5rem;
+}
+
+/* Recent Articles Grid */
+.articles-cards-grid-wrapper {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 2.5rem;
+}
+
+.article-card-thumbnail-img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    margin-bottom: 1rem;
+}
+
+.article-category-label-small {
+    color: var(--color-yellow-accent);
+    font-family: var(--font-titles);
+    font-weight: 700;
+    font-size: 0.8rem;
+}
+
+.article-card-heading-title {
+    font-size: 1.3rem;
+    margin: 0.5rem 0;
+}
+
+.article-card-description-summary {
+    color: var(--color-gray-text);
+    font-size: 0.95rem;
+}
+
+/* Sidebar Trending */
+.sidebar-trending-list-items {
+    list-style: none;
+}
+
+.sidebar-trending-list-item {
+    display: flex;
+    gap: 1.5rem;
+    padding: 1.5rem 0;
+    border-bottom: 1px solid #eee;
+}
+
+.trending-rank-number {
+    font-family: var(--font-titles);
+    font-size: 2.5rem;
+    color: #eee;
+    font-weight: 700;
+    line-height: 1;
+}
+
+.trending-article-title-heading {
+    font-size: 1.1rem;
+    margin-bottom: 0.3rem;
+}
+
+.trending-article-meta-date {
+    font-size: 0.8rem;
+    color: var(--color-gray-text);
+}
+
+/* Footer */
+.footer-main-container {
+    border-top: 2px solid var(--color-black-editorial);
+    padding: 4rem 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.footer-magazine-logo-title {
+    font-size: 1.8rem;
+}
+
+.footer-magazine-tagline-text {
+    color: var(--color-gray-text);
+    font-size: 0.9rem;
+}
+
+.footer-copyright-legal-section {
+    font-size: 0.85rem;
+    color: var(--color-gray-text);
+}
+
+/* Responsive Design */
+@media (max-width: 992px) {
+    .hero-article-card-featured {
+        grid-template-columns: 1fr;
+    }
+    .articles-grid-sidebar-layout {
+        grid-template-columns: 1fr;
+    }
+}

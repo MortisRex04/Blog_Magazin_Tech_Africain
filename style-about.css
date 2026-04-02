@@ -1,0 +1,272 @@
+/* --- Luxury Variables --- */
+:root {
+    --color-black-editorial: #0F0F0F;
+    --color-white-pure: #FFFFFF;
+    --color-yellow-accent: #F59E0B;
+    --color-gray-soft: #f9f9f9;
+    --color-gray-text: #4b5563;
+    --font-titles: 'Oswald', sans-serif;
+    --font-body: 'Source Serif Pro', serif;
+}
+
+/* --- Base Layout --- */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+    background-color: var(--color-white-pure);
+    color: var(--color-black-editorial);
+    font-family: var(--font-body);
+    padding: 0 5%;
+    line-height: 1.7;
+    overflow-x: hidden;
+}
+
+/* --- Header & Nav --- */
+.header-main-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2rem 0;
+    border-bottom: 2px solid var(--color-black-editorial);
+    margin-bottom: 3rem;
+}
+.header-magazine-title { 
+    font-family: var(--font-titles); 
+    font-size: 2.5rem; 
+    text-transform: uppercase; 
+    font-weight: 700;
+}
+.accent-color-yellow {
+    color: var(--color-yellow-accent);
+}
+.header-nav-list-items { display: flex; list-style: none; gap: 2rem; }
+.nav-link-item { 
+    text-decoration: none; 
+    color: var(--color-black-editorial); 
+    font-family: var(--font-titles); 
+    font-weight: 700; 
+    font-size: 1.1rem;
+    text-transform: uppercase; 
+    transition: color 0.3s ease;
+}
+.nav-link-item:hover, .nav-link-item.active {
+    color: var(--color-yellow-accent);
+}
+.accent-button { 
+    background-color: var(--color-black-editorial); 
+    color: var(--color-white-pure); 
+    padding: 0.5rem 1.2rem; 
+}
+
+/* --- Hero Section --- */
+.about-hero-minimal {
+    padding: 4rem 0 8rem 0;
+    text-align: center;
+}
+
+.about-hero-minimal h1 {
+    font-family: var(--font-titles);
+    font-size: clamp(3rem, 10vw, 7rem);
+    font-weight: 700;
+    line-height: 0.9;
+    margin-bottom: 4rem;
+    letter-spacing: -2px;
+}
+
+.hero-image-full {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+.hero-image-full img {
+    width: 100%;
+    height: 600px;
+    object-fit: cover;
+    filter: grayscale(30%);
+    transition: transform 1s ease;
+}
+
+.hero-image-full:hover img {
+    transform: scale(1.05);
+}
+
+/* --- Vision Section --- */
+.about-vision-section {
+    padding: 8rem 0;
+    display: flex;
+    justify-content: center;
+}
+
+.vision-content {
+    max-width: 800px;
+    text-align: center;
+}
+
+.small-caps-tag {
+    font-family: var(--font-titles);
+    font-weight: 700;
+    color: var(--color-yellow-accent);
+    letter-spacing: 4px;
+    font-size: 0.8rem;
+    display: block;
+    margin-bottom: 2rem;
+}
+
+.vision-lead-text {
+    font-size: clamp(1.5rem, 4vw, 2.5rem);
+    line-height: 1.2;
+    margin-bottom: 3rem;
+    font-weight: 700;
+}
+
+.vision-details p {
+    font-size: 1.3rem;
+    color: var(--color-gray-text);
+}
+
+/* --- Features Visual --- */
+.about-features-visual {
+    margin-bottom: 10rem;
+}
+
+.feature-item {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 6rem;
+    align-items: center;
+    margin-bottom: 8rem;
+}
+
+.feature-item.reverse {
+    direction: rtl;
+}
+
+.feature-item.reverse .feature-text {
+    direction: ltr;
+}
+
+.feature-img img {
+    width: 100%;
+    height: auto;
+    box-shadow: 30px 30px 0px var(--color-gray-soft);
+}
+
+.feature-text h3 {
+    font-family: var(--font-titles);
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.feature-text p {
+    font-size: 1.2rem;
+    color: var(--color-gray-text);
+}
+
+/* --- Elegant Stats --- */
+.about-elegant-stats {
+    display: flex;
+    justify-content: space-around;
+    padding: 8rem 0;
+    background-color: var(--color-black-editorial);
+    color: var(--color-white-pure);
+    margin: 0 -6%; /* Stretch beyond container */
+}
+
+.stat-circle {
+    text-align: center;
+}
+
+.stat-circle .num {
+    display: block;
+    font-family: var(--font-titles);
+    font-size: 5rem;
+    color: var(--color-yellow-accent);
+}
+
+.stat-circle .lab {
+    font-family: var(--font-titles);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 0.9rem;
+    opacity: 0.7;
+}
+
+/* --- CTA Section --- */
+.about-cta-footer {
+    padding: 10rem 0;
+    text-align: center;
+}
+
+.about-cta-footer h2 {
+    font-family: var(--font-titles);
+    font-size: 3rem;
+    margin-bottom: 3rem;
+}
+
+.cta-outline-btn {
+    display: inline-block;
+    padding: 1.5rem 4rem;
+    border: 2px solid var(--color-black-editorial);
+    text-decoration: none;
+    color: var(--color-black-editorial);
+    font-family: var(--font-titles);
+    font-weight: 700;
+    font-size: 1.2rem;
+    transition: all 0.3s;
+}
+
+.cta-outline-btn:hover {
+    background-color: var(--color-black-editorial);
+    color: var(--color-white-pure);
+}
+
+/* --- Animations --- */
+.fade-in-up {
+    animation: fadeInUp 1s ease-out;
+}
+
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* --- Footer --- */
+.footer-main-container {
+    border-top: 2px solid var(--color-black-editorial);
+    padding: 4rem 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.footer-magazine-logo-title {
+    font-family: var(--font-titles);
+    font-size: 1.8rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.footer-magazine-tagline-text {
+    color: var(--color-gray-text);
+    font-size: 0.9rem;
+}
+
+.footer-copyright-legal-section {
+    font-size: 0.85rem;
+    color: var(--color-gray-text);
+}
+
+/* --- Responsive --- */
+@media (max-width: 992px) {
+    .feature-item, .feature-item.reverse {
+        grid-template-columns: 1fr;
+        direction: ltr;
+        gap: 2rem;
+    }
+    .about-elegant-stats {
+        flex-direction: column;
+        gap: 4rem;
+    }
+}

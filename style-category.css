@@ -1,0 +1,219 @@
+/* Root Variables for Consistency */
+:root {
+    --color-black-editorial: #0F0F0F;
+    --color-white-pure: #FFFFFF;
+    --color-yellow-accent: #F59E0B;
+    --color-gray-text: #6B7280;
+    --font-titles: 'Oswald', sans-serif;
+    --font-body: 'Source Serif Pro', serif;
+}
+
+/* Reset and Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--color-white-pure);
+    color: var(--color-black-editorial);
+    font-family: var(--font-body);
+    line-height: 1.6;
+    padding: 0 5%;
+}
+
+/* Typography Overrides */
+h1, h2, h3, h4 {
+    font-family: var(--font-titles);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.accent-color-yellow {
+    color: var(--color-yellow-accent);
+}
+
+/* Header Navigation (Shared) */
+.header-main-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2rem 0;
+    border-bottom: 2px solid var(--color-black-editorial);
+    margin-bottom: 3rem;
+}
+
+.header-magazine-title {
+    font-size: 2.5rem;
+}
+
+.header-nav-list-items {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+}
+
+.nav-link-item {
+    text-decoration: none;
+    color: var(--color-black-editorial);
+    font-family: var(--font-titles);
+    font-weight: 700;
+    font-size: 1.1rem;
+}
+
+.nav-link-item.active {
+    color: var(--color-yellow-accent);
+}
+
+.accent-button {
+    background-color: var(--color-black-editorial);
+    color: var(--color-white-pure);
+    padding: 0.5rem 1.2rem;
+}
+
+/* Category Page Content */
+.category-page-content-layout {
+    margin-bottom: 5rem;
+}
+
+.category-intro-banner-section {
+    text-align: center;
+    margin-bottom: 3rem;
+    padding: 3rem 0;
+    background-color: #f9f9f9;
+}
+
+.category-main-title-heading {
+    font-size: 4rem;
+    margin-bottom: 1rem;
+}
+
+.category-description-text-summary {
+    max-width: 800px;
+    margin: 0 auto;
+    color: var(--color-gray-text);
+    font-size: 1.2rem;
+}
+
+/* Category Filters Bar */
+.category-filters-navigation-bar {
+    margin-bottom: 3rem;
+    display: flex;
+    justify-content: center;
+    border-top: 1px solid #eee;
+    border-bottom: 1px solid #eee;
+    padding: 1rem 0;
+}
+
+.category-filters-list-items {
+    display: flex;
+    list-style: none;
+    gap: 3rem;
+}
+
+.filter-link-item {
+    text-decoration: none;
+    color: var(--color-black-editorial);
+    font-family: var(--font-titles);
+    font-weight: 700;
+    font-size: 0.9rem;
+    transition: color 0.3s ease;
+}
+
+.filter-link-item:hover, .filter-link-item.active {
+    color: var(--color-yellow-accent);
+}
+
+/* Articles Grid */
+.category-articles-grid-container {
+    margin-bottom: 4rem;
+}
+
+.articles-cards-grid-wrapper {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 3rem;
+}
+
+.article-card-thumbnail-img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    margin-bottom: 1rem;
+}
+
+.article-category-label-small {
+    color: var(--color-yellow-accent);
+    font-family: var(--font-titles);
+    font-weight: 700;
+    font-size: 0.8rem;
+}
+
+.article-card-heading-title {
+    font-size: 1.4rem;
+    margin: 0.5rem 0;
+}
+
+.article-card-description-summary {
+    color: var(--color-gray-text);
+}
+
+/* Pagination */
+.category-pagination-navigation {
+    display: flex;
+    justify-content: center;
+    margin-top: 3rem;
+}
+
+.category-pagination-list-items {
+    display: flex;
+    list-style: none;
+    gap: 1rem;
+}
+
+.pagination-link-item {
+    display: block;
+    padding: 0.5rem 1rem;
+    border: 1px solid var(--color-black-editorial);
+    text-decoration: none;
+    color: var(--color-black-editorial);
+    font-family: var(--font-titles);
+    font-weight: 700;
+    transition: all 0.3s ease;
+}
+
+.pagination-link-item:hover, .pagination-link-item.active {
+    background-color: var(--color-black-editorial);
+    color: var(--color-white-pure);
+}
+
+.pagination-link-item.active {
+    background-color: var(--color-yellow-accent);
+    border-color: var(--color-yellow-accent);
+}
+
+/* Footer (Shared) */
+.footer-main-container {
+    border-top: 2px solid var(--color-black-editorial);
+    padding: 4rem 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.footer-magazine-logo-title {
+    font-size: 1.8rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .category-main-title-heading {
+        font-size: 2.5rem;
+    }
+    .category-filters-list-items {
+        gap: 1.5rem;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+}
