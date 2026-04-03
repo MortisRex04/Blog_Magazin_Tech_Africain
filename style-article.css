@@ -193,3 +193,84 @@ h1, h2, h3 {
     border-top: 2px solid var(--color-black-editorial);
     border-bottom: 2px solid var(--color-black-editorial);
 }
+
+/* Newsletter Box */
+.article-sidebar-interaction-aside {
+    background-color: #f9f9f9;
+    padding: 3rem;
+    text-align: center;
+    border: 1px solid #eee;
+}
+
+.newsletter-title-heading-small {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+}
+
+.newsletter-description-text {
+    margin-bottom: 2rem;
+    color: var(--color-gray-text);
+}
+
+.newsletter-subscribe-form-main {
+    display: flex;
+    gap: 1rem;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.newsletter-input-field-form {
+    flex: 1;
+    padding: 1rem;
+    border: 1px solid #ccc;
+    font-family: var(--font-body);
+}
+
+.newsletter-submit-button-form {
+    padding: 1rem 2rem;
+    background-color: var(--color-black-editorial);
+    color: var(--color-white-pure);
+    border: none;
+    font-family: var(--font-titles);
+    font-weight: 700;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.newsletter-submit-button-form:hover {
+    background-color: var(--color-yellow-accent);
+    color: var(--color-black-editorial);
+}
+
+/* Footer (Shared) */
+.footer-main-container {
+    border-top: 2px solid var(--color-black-editorial);
+    padding: 4rem 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.footer-magazine-logo-title {
+    font-size: 1.8rem;
+}
+
+.footer-magazine-tagline-text {
+    color: var(--color-gray-text);
+    font-size: 0.9rem;
+}
+
+.footer-copyright-legal-section {
+    font-size: 0.85rem;
+    color: var(--color-gray-text);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .article-title-heading-large {
+        font-size: 2.5rem;
+    }
+    .newsletter-subscribe-form-main {
+        flex-direction: column;
+    }
+}
