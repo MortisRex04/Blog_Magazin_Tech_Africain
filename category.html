@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catégorie : Innovation | Tech Africain</title>
+    <!-- Google Fonts: Oswald 700 and Source Serif Pro 400 -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@700&family=Source+Serif+Pro:wght@400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style-category.css">
+    <style>
+        /* --- Styles du Slider Dynamique --- */
+        .category-articles-slider-wrapper {
+            overflow: hidden;
+            position: relative;
+            width: 100%;
+            padding: 20px 0;
+        }
+
+        .articles-container-track {
+            display: flex;
+            transition: transform 0.8s cubic-bezier(0.85, 0, 0.15, 1);
+            width: 500%; /* 5 pages de 100% */
+        }
+
+        .articles-page-group {
+            width: 20%; /* 1/5ème du track */
+            padding: 0 15px;
+        }
+
+        /* --- Grille et Alignement --- */
+        .articles-cards-grid-wrapper {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-template-rows: repeat(2, auto);
+            gap: 3rem 2rem;
+        }
+
+        /* --- Effets au Survol (Hover Effects) --- */
+        .article-card-grid-item {
+            background: #fff;
+            padding: 10px;
+            transition: all 0.4s ease;
+            border: 1px solid transparent;
+            display: flex;
+            flex-direction: column;
+            cursor: pointer;
+        }
+
+        .article-card-grid-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            border-color: #eee;
+        }
+
+        .article-card-thumbnail-img {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .article-card-grid-item:hover .article-card-thumbnail-img {
+            transform: scale(1.05);
+        }
+
+        .article-card-heading-title a {
+            text-decoration: none;
+            color: inherit;
+            background-image: linear-gradient(var(--color-yellow-accent), var(--color-yellow-accent));
+            background-position: 0% 100%;
+            background-repeat: no-repeat;
+            background-size: 0% 2px;
+            transition: background-size 0.3s;
+        }
+
+        .article-card-grid-item:hover .article-card-heading-title a {
+            background-size: 100% 2px;
+        }
+
+        /* --- Pagination Style --- */
+        .category-pagination-navigation {
+            display: flex;
+            justify-content: center;
+            margin-top: 4rem;
+        }
+
+        .category-pagination-list-items {
+            display: flex;
+            list-style: none;
+            gap: 1.5rem;
+        }
+
+        .pagination-link-item {
+            cursor: pointer;
+            border: 2px solid #000;
+            background: transparent;
+            width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: var(--font-titles);
+            font-weight: 700;
+            font-size: 1.3rem;
+            transition: all 0.3s ease;
+        }
+
+        .pagination-link-item.active {
+            background-color: var(--color-yellow-accent) !important;
+            border-color: var(--color-yellow-accent) !important;
+            color: #000;
+            transform: scale(1.1);
+        }
+
+        @media (max-width: 992px) {
+            .articles-cards-grid-wrapper { grid-template-columns: repeat(2, 1fr); }
+        }
+        @media (max-width: 600px) {
+            .articles-cards-grid-wrapper { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body class="site-main-container">
+
+    <header class="header-main-nav">
+        <div class="header-logo-container">
+            <a href="index.html" style="text-decoration: none; color: inherit;">
+                <h1 class="header-magazine-title">TECH <span class="accent-color-yellow">AFRICAIN</span></h1>
+            </a>
+        </div>
+        <nav class="header-navigation-menu">
+            <ul class="header-nav-list-items">
+                <li><a href="index.html" class="nav-link-item">ACCUEIL</a></li>
+                <li><a href="article.html" class="nav-link-item">ARTICLE</a></li>
+                <li><a href="category.html" class="nav-link-item active">CATEGORIES</a></li>
+                <li><a href="authors.html" class="nav-link-item">AUTEURS</a></li>
+                <li><a href="about.html" class="nav-link-item">À PROPOS</a></li>
+                <li><a href="newsletter.html" class="nav-link-item accent-button">S'abonner</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="category-page-content-layout">
+        <header class="category-intro-banner-section">
+            <h1 class="category-main-title-heading">PROJETS <span class="accent-color-yellow">INNOVATION</span></h1>
+            <p class="category-description-text-summary">Explorez 30 projets technologiques qui transforment l'Afrique.</p>
+        </header>
+
+        <div class="category-articles-slider-wrapper">
+            <div class="articles-container-track" id="articlesTrack">
+                
+                <!-- GROUPE 1 -->
+                <div class="articles-page-group">
+                    <div class="articles-cards-grid-wrapper">
+                        <article class="article-card-grid-item">
+                            <a href="article.html"><img src="https://images.unsplash.com/photo-1556742044-3c52d6e88c62?auto=format&fit=crop&q=80&w=400" class="article-card-thumbnail-img"></a>
+                            <span class="article-category-label-small">FINTECH</span>
+                            <h4 class="article-card-heading-title"><a href="article.html">Le futur du paiement mobile</a></h4>
+                            <p class="article-card-description-summary">Comment Dakar devient un hub financier numérique.</p>
+                        </article>
+                        <article class="article-card-grid-item">
+                            <a href="article.html"><img src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&q=80&w=400" class="article-card-thumbnail-img"></a>
+                            <span class="article-category-label-small">IA</span>
+                            <h4 class="article-card-heading-title"><a href="article.html">IA et Gestion de l'Eau</a></h4>
+                            <p class="article-card-description-summary">Algorithmes pour une distribution équitable.</p>
+                        </article>
+                        <article class="article-card-grid-item">
+                            <a href="article.html"><img src="https://images.unsplash.com/photo-1497435334941-8c899ee9e8e9?auto=format&fit=crop&q=80&w=400" class="article-card-thumbnail-img"></a>
+                            <span class="article-category-label-small">ÉNERGIE</span>
+                            <h4 class="article-card-heading-title"><a href="article.html">Solaire rural au Mali</a></h4>
+                            <p class="article-card-description-summary">Éclairer les zones hors réseau.</p>
+                        </article>
+                        <article class="article-card-grid-item">
+                            <a href="article.html"><img src="https://images.unsplash.com/photo-1580674285054-bed31e145f59?auto=format&fit=crop&q=80&w=400" class="article-card-thumbnail-img"></a>
+                            <span class="article-category-label-small">HEALTH</span>
+                            <h4 class="article-card-heading-title"><a href="article.html">Drones de santé au Ghana</a></h4>
+                            <p class="article-card-description-summary">Livraison de sang par les airs.</p>
+                        </article>
+                        <article class="article-card-grid-item">
+                            <a href="article.html"><img src="https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&q=80&w=400" class="article-card-thumbnail-img"></a>
+                            <span class="article-category-label-small">CYBER</span>
+                            <h4 class="article-card-heading-title"><a href="article.html">Sécurité des banques</a></h4>
+                            <p class="article-card-description-summary">Protéger les actifs numériques.</p>
+                        </article>
+                        <article class="article-card-grid-item">
+                            <a href="article.html"><img src="https://images.unsplash.com/photo-1550009158-9ebf69173e03?auto=format&fit=crop&q=80&w=400" class="article-card-thumbnail-img"></a>
+                            <span class="article-category-label-small">HARDWARE</span>
+                            <h4 class="article-card-heading-title"><a href="article.html">Laptops Made in Togo</a></h4>
+                            <p class="article-card-description-summary">Hardware durable et local.</p>
+                        </article>
+                    </div>
+                </div>
+
+                <!-- GROUPE 2 -->
+                <div class="articles-page-group">
+                    <div class="articles-cards-grid-wrapper">
+                        <article class="article-card-grid-item">
+                            <a href="article.html"><img src="https://images.unsplash.com/photo-1485827404703-89b55fcc595e?auto=format&fit=crop&q=80&w=400" class="article-card-thumbnail-img"></a>
+                            <span class="article-category-label-small">ROBOTS</span>
+                            <h4 class="article-card-heading-title"><a href="article.html">Agri-Robots au Kenya</a></h4>
+                            <p class="article-card-description-summary">Moderniser les champs de thé.</p>
+                        </article>
+                        <article class="article-card-grid-item">
+                            <a href="article.html"><img src="https://images.unsplash.com/photo-1518186285589-2f7649de83e0?auto=format&fit=crop&q=80&w=400" class="article-card-thumbnail-img"></a>
+                            <span class="article-category-label-small">DATA</span>
+                            <h4 class="article-card-heading-title"><a href="article.html">Big Data à Abidjan</a></h4>
+                            <p class="article-card-description-summary">Prévention des crues urbaines.</p>
+                        </article>
+                        <article class="article-card-grid-item">
+                            <a href="article.html"><img src="https://images.unsplash.com/photo-1576086213369-97a306d36557?auto=format&fit=crop&q=80&w=400" class="article-card-thumbnail-img"></a>
+                            <span class="article-category-label-small">BIOTECH</span>
+                            <h4 class="article-card-heading-title"><a href="article.html">Vaccins sénégalais</a></h4>
+                            <p class="article-card-description-summary">Souveraineté sanitaire en marche.</p>
+                        </article>
+                        <article class="article-card-grid-item">
+                            <a href="article.html"><img src="https://images.unsplash.com/photo-1501504905252-473c47e087f8?auto=format&fit=crop&q=80&w=400" class="article-card-thumbnail-img"></a>
+                            <span class="article-category-label-small">EDTECH</span>
+                            <h4 class="article-card-heading-title"><a href="article.html">E-Learning WhatsApp</a></h4>
+                            <p class="article-card-description-summary">L'éducation partout, pour tous.</p>
+                        </article>
+                        <article class="article-card-grid-item">
+                            <a href="article.html"><img src="https://images.unsplash.com/photo-1521737711867-e3b97375f902?auto=format&fit=crop&q=80&w=400" class="article-card-thumbnail-img"></a>
+                            <span class="article-category-label-small">WORK</span>
+                            <h4 class="article-card-heading-title"><a href="article.html">Recrutement Tech 3.0</a></h4>
+                            <p class="article-card-description-summary">Connecter les développeurs au monde.</p>
+                        </article>
+                        <article class="article-card-grid-item">
+                            <a href="article.html"><img src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&q=80&w=400" class="article-card-thumbnail-img"></a>
+                            <span class="article-category-label-small">LOGISTIQUE</span>
+                            <h4 class="article-card-heading-title"><a href="article.html">Dernier kilomètre</a></h4>
+                            <p class="article-card-description-summary">Livrer l'impossible à Lagos.</p>
+                        </article>
+                    </div>
+                </div>
+
+                <!-- GROUPE 3 -->
+                <div class="articles-page-group">
+                    <div class="articles-cards-grid-wrapper">
+                        <article class="article-card-grid-item">
+                            <a href="article.html"><img src="https://images.unsplash.com/photo-1519567241046-7f570eee3ce6?auto=format&fit=crop&q=80&w=400" class="article-card-thumbnail-img"></a>
+                            <span class="article-category-label-small">CITY</span>
+                            <h4 class="article-card-heading-title"><a href="article.html">Diamniadio Smart City</a></h4>
+                            <p class="article-card-description-summary">Le futur urbain du Sénégal.</p>
+                        </article>
+                        <article class="article-card-grid-item">
+                            <a href="article.html"><img src="https://images.unsplash.com/photo-1639762681485-074b7f938ba0?auto=format&fit=crop&q=80&w=400" class="article-card-thumbnail-img"></a>
+                            <span class="article-category-label-small">CHAIN</span>
+                            <h4 class="article-card-heading-title"><a href="article.html">Blockchain Foncière</a></h4>
+                            <p class="article-card-description-summary">Sécuriser les titres de propriété.</p>
+                        </article>
+                        <article class="article-card-grid-item">
+                            <a href="article.html"><img src="https://images.unsplash.com/photo-1614064641938-3bbee52942c7?auto=format&fit=crop&q=80&w=400" class="article-card-thumbnail-img"></a>
+                            <span class="article-category-label-small">TELECOM</span>
+                            <h4 class="article-card-heading-title"><a href="article.html">Révolution 5G Maroc</a></h4>
+                            <p class="article-card-description-summary">Vitesse et innovation industrielle.</p>
+                        </article>
+                        <article class="article-card-grid-item">
+                            <a href="article.html"><img src="https://images.unsplash.com/photo-1454789548928-9efd52dc4031?auto=format&fit=crop&q=80&w=400" class="article-card-thumbnail-img"></a>
+                            <span class="article-category-label-small">SPACE</span>
+                            <h4 class="article-card-heading-title"><a href="article.html">Nanosatellites Africains</a></h4>
+                            <p class="article-card-description-summary">L'espace à portée de main.</p>
+                        </article>
+                        <article class="article-card-grid-item">
+                            <a href="article.html"><img src="https://images.unsplash.com/photo-1509391366360-2e959784a276?auto=format&fit=crop&q=80&w=400" class="article-card-thumbnail-img"></a>
+                            <span class="article-category-label-small">GREEN</span>
+                            <h4 class="article-card-heading-title"><a href="article.html">Batteries Recyclées</a></h4>
+                            <p class="article-card-description-summary">Économie circulaire au Cameroun.</p>
+                        </article>
+                        <article class="article-card-grid-item">
+                            <a href="article.html"><img src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?auto=format&fit=crop&q=80&w=400" class="article-card-thumbnail-img"></a>
+                            <span class="article-category-label-small">CODE</span>
+                            <h4 class="article-card-heading-title"><a href="article.html">Codeuses de Kinshasa</a></h4>
+                            <p class="article-card-description-summary">L'excellence au féminin.</p>
+                        </article>
+                    </div>
+                </div>
+
+                <!-- GROUPE 4 -->
+                <div class="articles-page-group">
+                    <div class="articles-cards-grid-wrapper">
+                        <article class="article-card-grid-item">
+                            <a href="article.html"><img src="https://images.unsplash.com/photo-1550009158-9ebf69173e03?auto=format&fit=crop&q=80&w=400" class="article-card-thumbnail-img"></a>
+                            <span class="article-category-label-small">ELECTRO</span>
+                            <h4 class="article-card-heading-title"><a href="article.html">Véhicules Électriques</a></h4>
+                            <p class="article-card-description-summary">La mobilité verte à Nairobi.</p>
+                        </article>
+                        <article class="article-card-grid-item">
+                            <a href="article.html"><img src="https://images.unsplash.com/photo-1516116216624-53e697fedbea?auto=format&fit=crop&q=80&w=400" class="article-card-thumbnail-img"></a>
+                            <span class="article-category-label-small">WEB</span>
+                            <h4 class="article-card-heading-title"><a href="article.html">Web3 et Créateurs</a></h4>
+                            <p class="article-card-description-summary">L'économie de la création.</p>
+                        </article>
+                        <article class="article-card-grid-item">
+                            <a href="article.html"><img src="https://images.unsplash.com/photo-1504639725590-34d0984388bd?auto=format&fit=crop&q=80&w=400" class="article-card-thumbnail-img"></a>
+                            <span class="article-category-label-small">DEV</span>
+                            <h4 class="article-card-heading-title"><a href="article.html">Open Source Africa</a></h4>
+                            <p class="article-card-description-summary">Collaborer pour l'innovation.</p>
+                        </article>
+                        <article class="article-card-grid-item">
+                            <a href="article.html"><img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=400" class="article-card-thumbnail-img"></a>
+                            <span class="article-category-label-small">MARCHÉ</span>
+                            <h4 class="article-card-heading-title"><a href="article.html">Bourse Digitale</a></h4>
+                            <p class="article-card-description-summary">Investir depuis son mobile.</p>
+                        </article>
+                        <article class="article-card-grid-item">
+                            <a href="article.html"><img src="https://images.unsplash.com/photo-1535223289827-42f1e9919769?auto=format&fit=crop&q=80&w=400" class="article-card-thumbnail-img"></a>
+                            <span class="article-category-label-small">VR</span>
+                            <h4 class="article-card-heading-title"><a href="article.html">Tourisme Virtuel</a></h4>
+                            <p class="article-card-description-summary">Visiter le patrimoine en VR.</p>
+                        </article>
+                        <article class="article-card-grid-item">
+                            <a href="article.html"><img src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&q=80&w=400" class="article-card-thumbnail-img"></a>
+                            <span class="article-category-label-small">COWORKING</span>
+                            <h4 class="article-card-heading-title"><a href="article.html">Hubs de Innovation</a></h4>
+                            <p class="article-card-description-summary">Les nouveaux temples de la tech.</p>
+                        </article>
+                    </div>
+                </div>
+
+                <!-- GROUPE 5 -->
+                <div class="articles-page-group">
+                    <div class="articles-cards-grid-wrapper">
+                        <article class="article-card-grid-item">
+                            <a href="article.html"><img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&q=80&w=400" class="article-card-thumbnail-img"></a>
+                            <span class="article-category-label-small">FUTURE</span>
+                            <h4 class="article-card-heading-title"><a href="article.html">Bureaux du Futur</a></h4>
+                            <p class="article-card-description-summary">Le travail hybride en Afrique.</p>
+                        </article>
+                        <article class="article-card-grid-item">
+                            <a href="article.html"><img src="https://images.unsplash.com/photo-1559136555-9303baea8ebd?auto=format&fit=crop&q=80&w=400" class="article-card-thumbnail-img"></a>
+                            <span class="article-category-label-small">STARTUP</span>
+                            <h4 class="article-card-heading-title"><a href="article.html">Licornes Africaines</a></h4>
+                            <p class="article-card-description-summary">Les succès à un milliard.</p>
+                        </article>
+                        <article class="article-card-grid-item">
+                            <a href="article.html"><img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&q=80&w=400" class="article-card-thumbnail-img"></a>
+                            <span class="article-category-label-small">TEAM</span>
+                            <h4 class="article-card-heading-title"><a href="article.html">Équipes Distribuées</a></h4>
+                            <p class="article-card-description-summary">Gérer le talent sans frontières.</p>
+                        </article>
+                        <article class="article-card-grid-item">
+                            <a href="article.html"><img src="https://images.unsplash.com/photo-1517077304055-6e89abbf09b0?auto=format&fit=crop&q=80&w=400" class="article-card-thumbnail-img"></a>
+                            <span class="article-category-label-small">MICRO</span>
+                            <h4 class="article-card-heading-title"><a href="article.html">Micro-processeurs</a></h4>
+                            <p class="article-card-description-summary">La gravure fine locale.</p>
+                        </article>
+                        <article class="article-card-grid-item">
+                            <a href="article.html"><img src="https://images.unsplash.com/photo-1446776811953-b23d57bd21aa?auto=format&fit=crop&q=80&w=400" class="article-card-thumbnail-img"></a>
+                            <span class="article-category-label-small">CLOUD</span>
+                            <h4 class="article-card-heading-title"><a href="article.html">Data Centers Souverains</a></h4>
+                            <p class="article-card-description-summary">Héberger les données sur place.</p>
+                        </article>
+                        <article class="article-card-grid-item">
+                            <a href="article.html"><img src="https://images.unsplash.com/photo-1542751371-adc38448a05e?auto=format&fit=crop&q=80&w=400" class="article-card-thumbnail-img"></a>
+                            <span class="article-category-label-small">GAMING</span>
+                            <h4 class="article-card-heading-title"><a href="article.html">E-Sport au Maghreb</a></h4>
+                            <p class="article-card-description-summary">Une industrie en pleine explosion.</p>
+                        </article>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <nav class="category-pagination-navigation">
+            <ul class="category-pagination-list-items">
+                <li><button onclick="scrollToPage(0, 1)" class="pagination-link-item active" id="btn1">1</button></li>
+                <li><button onclick="scrollToPage(1, 2)" class="pagination-link-item" id="btn2">2</button></li>
+                <li><button onclick="scrollToPage(2, 3)" class="pagination-link-item" id="btn3">3</button></li>
+                <li><button onclick="scrollToPage(3, 4)" class="pagination-link-item" id="btn4">4</button></li>
+                <li><button onclick="scrollToPage(4, 5)" class="pagination-link-item" id="btn5">5</button></li>
+            </ul>
+        </nav>
+    </main>
+
+    <footer class="footer-main-container">
+        <div class="footer-branding-info">
+            <h2 class="footer-magazine-logo-title">TECH <span class="accent-color-yellow">AFRICAIN</span></h2>
+        </div>
+    </footer>
+
+    <script>
+        function scrollToPage(pageIndex, btnNumber) {
+            const track = document.getElementById('articlesTrack');
+            track.style.transform = `translateX(-${pageIndex * 20}%)`;
+
+            document.querySelectorAll('.pagination-link-item').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            document.getElementById('btn' + btnNumber).classList.add('active');
+
+            window.scrollTo({
+                top: document.querySelector('.category-intro-banner-section').offsetTop,
+                behavior: 'smooth'
+            });
+        }
+    </script>
+
+</body>
+</html>
