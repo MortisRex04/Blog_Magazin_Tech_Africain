@@ -81,9 +81,30 @@
 
                     <button type="submit" class="newsletter-submit-cta-btn">REJOINDRE LA COMMUNAUTÉ</button>
                 </form>
+
+                <div class="form-footer-note">
+                    <p>Respect de la vie privée. Aucun spam. Désinscription en un clic.</p>
+                </div>
             </div>
         </section>
     </main>
+
+    <footer class="footer-main-container">
+        <div class="footer-branding-info">
+            <h2 class="footer-magazine-logo-title">TECH <span class="accent-color-yellow">AFRICAIN</span></h2>
+        </div>
+        <div class="footer-copyright-legal-section">
+            <p>&copy; 2026 Blog Magazine Tech Africain.</p>
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById('subscriptionForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Merci de votre inscription ! Vous allez recevoir un email de confirmation.');
+            this.reset();
+        });
+    </script>
 
 </body>
 </html>
