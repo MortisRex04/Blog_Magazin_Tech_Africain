@@ -41,7 +41,46 @@
             </div>
 
             <div class="newsletter-form-side">
-                <!-- Le formulaire sera ajouté ici -->
+                <header class="form-header-intro">
+                    <span class="subscription-label-accent">S'ABONNER</span>
+                    <h1 class="form-main-title">NE MANQUEZ <span class="accent-color-yellow">RIEN</span>.</h1>
+                    <p class="form-description-text">Recevez chaque lundi matin une sélection de nos meilleures analyses, des interviews exclusives et les dernières levées de fonds.</p>
+                </header>
+
+                <form class="newsletter-subscribe-form-main" id="subscriptionForm">
+                    <div class="form-input-group-row">
+                        <div class="input-field-wrapper">
+                            <label for="firstName">Prénom</label>
+                            <input type="text" id="firstName" placeholder="Ex: Amina" required class="form-input-control">
+                        </div>
+                        <div class="input-field-wrapper">
+                            <label for="lastName">Nom</label>
+                            <input type="text" id="lastName" placeholder="Ex: Diallo" required class="form-input-control">
+                        </div>
+                    </div>
+
+                    <div class="input-field-wrapper">
+                        <label for="email">Adresse Email</label>
+                        <input type="email" id="email" placeholder="votre@email.com" required class="form-input-control">
+                    </div>
+
+                    <div class="input-field-wrapper">
+                        <label for="interest">Sujet d'intérêt principal</label>
+                        <select id="interest" class="form-input-control select-control">
+                            <option value="innovation">Innovation & Startups</option>
+                            <option value="fintech">Fintech & Économie</option>
+                            <option value="infrastructure">Infrastructures & 5G</option>
+                            <option value="policy">Politique & Régulation</option>
+                        </select>
+                    </div>
+
+                    <div class="form-checkbox-consent-wrapper">
+                        <input type="checkbox" id="consent" required>
+                        <label for="consent">J'accepte de recevoir la newsletter hebdomadaire de Tech Africain et je consens au traitement de mes données personnelles.</label>
+                    </div>
+
+                    <button type="submit" class="newsletter-submit-cta-btn">REJOINDRE LA COMMUNAUTÉ</button>
+                </form>
             </div>
         </section>
     </main>
