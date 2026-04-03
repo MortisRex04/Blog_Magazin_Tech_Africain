@@ -159,3 +159,37 @@ h1, h2, h3 {
     font-style: italic;
     text-align: center;
 }
+
+/* Article Body Content */
+.article-content-body-text-section {
+    font-size: 1.25rem;
+    margin-bottom: 4rem;
+}
+
+.article-paragraph-leading-text {
+    font-size: 1.5rem;
+    font-weight: 500;
+    margin-bottom: 2rem;
+}
+
+.article-subheading-editorial-line {
+    font-size: 2rem;
+    margin: 3rem 0 1.5rem 0;
+    border-left: 5px solid var(--color-yellow-accent);
+    padding-left: 1.5rem;
+}
+
+.article-paragraph-standard-text {
+    margin-bottom: 1.5rem;
+}
+
+.article-quote-featured-editorial {
+    font-family: var(--font-titles);
+    font-size: 2.5rem;
+    line-height: 1.1;
+    text-align: center;
+    margin: 4rem 0;
+    padding: 2rem;
+    border-top: 2px solid var(--color-black-editorial);
+    border-bottom: 2px solid var(--color-black-editorial);
+}
